@@ -6,7 +6,7 @@
                 const baseUrl = document.getElementById("url").value;
                 const jwt = document.getElementById("jwt").value;
                 const fullUrl = baseUrl + '?jid=' + jwt;
-                const anchorId = document.getElementById("redirectlink");
+                const anchorId = document.getElementById("link");
                 anchorId.href = fullUrl;
                 anchorId.innerText = fullUrl;
             }
@@ -18,7 +18,7 @@
             <input style="display: block; margin: 10px; border: 1px solid", type="text" id="url" name="url" size="50" value="http://wayne-young.com" placeholder="Base url">
             <input style="height:25%; display: block; margin: 10px; border: 1px solid", type="text" id="jwt" name="jwt" size="50" value="" placeholder="jwt">
             <button style="display: block; margin: 10px;" id="generate", onClick="generateLink()">Generate</button>
-            <a style="display: block; margin: 10px;" id="link" href=""></a>
+            <a style="display: block; margin: 10px;" target="_blank" id="link" href=""></a>
         </div>
     </body>
 </html>
