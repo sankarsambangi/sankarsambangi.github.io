@@ -10,6 +10,15 @@
                 anchorId.href = fullUrl;
                 anchorId.innerText = fullUrl;
             }
+            function redirect() {
+                const baseUrl = document.getElementById("url").value;
+                const jwt = document.getElementById("jwt").value;
+                const fullUrl = baseUrl + '?jid=' + jwt;
+                const anchorId = document.getElementById("link");
+                anchorId.href = fullUrl;
+                anchorId.innerText = fullUrl;
+		        window.open(fullUrl);
+            }
         </script>
     </head>
     <body>
@@ -18,6 +27,7 @@
             <input style="display: block; width: 90%; margin: 10px; border: 1px solid", type="text" id="url" name="url" value="https://custauth.herokuapp.com/redirect" placeholder="Base url">
             <textarea style="display: block; width:90%; margin: 10px; border: 1px solid", rows="10" id="jwt" name="jwt" value="" placeholder="jwt"></textarea>
             <button style="display: block; margin: 10px;" id="generate", onClick="generateLink()">Generate</button>
+            <button style="display: block; margin: 10px;" id="redirect", onClick="redirect()">Redirect</button>
             <a style="display: block; margin: 10px; word-break: break-all" target="_blank" id="link" href="" ></a>
         </div>
     </body>
